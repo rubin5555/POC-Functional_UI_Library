@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "demo-consumer",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "demo-consumer", "dev"],
+      "port": 5173
+    }
+  ]
+}

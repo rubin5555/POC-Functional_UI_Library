@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/react",
+    "rootDir": "src/react-lib",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2020",
+    "lib": ["dom", "es2020"],
+    "jsx": "react-jsx",
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": []
+  },
+  "include": ["src/react-lib"]
+}

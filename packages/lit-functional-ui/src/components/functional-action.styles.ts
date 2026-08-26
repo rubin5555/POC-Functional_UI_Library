@@ -1,0 +1,97 @@
+import { css } from "lit";
+
+/**
+ * Shadow-DOM-scoped styles for `<functional-action-lit>`. Kept in its own file
+ * so the component and view files stay focused on structure and behavior.
+ */
+export const functionalActionStyles = css`
+  :host {
+    display: block;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #1c2430;
+  }
+  .panel {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .status {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: #61708a;
+  }
+  ul.entities {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+  button.entity {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #d9dde3;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    font: inherit;
+  }
+  button.entity:hover {
+    border-color: #2f6feb;
+  }
+  button.entity[aria-pressed="true"] {
+    border-color: #2f6feb;
+    background: #e6efff;
+    box-shadow: inset 0 0 0 1px #2f6feb;
+  }
+  .entity__type {
+    color: #61708a;
+    font-size: 0.82rem;
+    margin-left: 0.4rem;
+  }
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  button.primary {
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #2f6feb;
+    background: #2f6feb;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+  }
+  button.primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  button.ghost {
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #d9dde3;
+    background: #fff;
+    font: inherit;
+    cursor: pointer;
+  }
+  .banner {
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  .banner--success {
+    background: #e5f4ec;
+    color: #1f7a47;
+    border: 1px solid #bfe3cd;
+  }
+  .banner--error {
+    background: #fdeaea;
+    color: #a92f2f;
+    border: 1px solid #f3c9c9;
+  }
+  .muted {
+    color: #61708a;
+  }
+`;

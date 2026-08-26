@@ -1,0 +1,386 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --border: #d9dde3;
+  --text: #1c2430;
+  --muted: #61708a;
+  --accent: #2f6feb;
+  --accent-soft: #e6efff;
+  --ok: #1f9d55;
+  --err: #d64545;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.85rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-brand {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.app-nav {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.nav-link {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.nav-link--active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.app-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 3rem;
+}
+
+/* Home */
+.home__lead {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.tech-grid {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.tech-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.tech-card__link {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.tech-card h3 {
+  margin: 0 0 0.35rem;
+}
+
+.tech-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Comparison table on Home */
+.compare {
+  margin-top: 2.25rem;
+}
+
+.compare__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.compare__head h3 {
+  margin: 0;
+}
+
+.compare__timestamp {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.compare__scroll {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.compare__table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 640px;
+  font-size: 0.9rem;
+  background: var(--surface);
+}
+
+.compare__table th,
+.compare__table td {
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.compare__table thead th {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+.compare__table thead th:first-child {
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.compare__table tbody th[scope="row"] {
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.compare__table tbody tr:last-child th,
+.compare__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compare__table tbody tr:nth-child(even) td,
+.compare__table tbody tr:nth-child(even) th {
+  background: rgba(47, 111, 235, 0.03);
+}
+
+.compare__note {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.compare code,
+.compare__note code {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* Tech page */
+.tech-page__head {
+  margin-bottom: 1.25rem;
+}
+
+.tech-page__name {
+  margin: 0;
+}
+
+.tech-page__summary {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.tech-page__sections {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Pros / cons panel */
+.proscons {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem 1rem;
+}
+
+.proscons__cols {
+  display: grid;
+  gap: 1rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.proscons__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.proscons__col--pro .proscons__title {
+  color: var(--ok);
+}
+
+.proscons__col--con .proscons__title {
+  color: var(--err);
+}
+
+.proscons__col ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.proscons__col--pro li::marker {
+  color: var(--ok);
+}
+
+.proscons__col--con li::marker {
+  color: var(--err);
+}
+
+.proscons__note {
+  margin: 0.9rem 0 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.workflow-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem 1.25rem;
+}
+
+.workflow-section__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.workflow-section__mode {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.workflow-section__note {
+  margin: 0.35rem 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 1rem;
+}
+
+/* Buttons */
+.btn {
+  font: inherit;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn--ghost {
+  color: var(--muted);
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+/* Debug panel */
+.debug {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  background: #fbfcfe;
+}
+
+.debug__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.debug__title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.debug__empty {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.debug__log {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.debug__entry {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.debug__time {
+  color: var(--muted);
+}
+
+.debug__result {
+  margin: 0.7rem 0 0;
+  padding: 0.6rem 0.75rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
